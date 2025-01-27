@@ -22,3 +22,50 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+.idea/
+*.iml
+*.ipr
+*.iws
+*.ids
+/out/
+/.idea_modules/
+
+/dataSources/
+/dataSources.local.xml
+
+/.idea/navEditor.xml
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.python-version
+
+# Virtual environment
+venv/
+.env/
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Compiled class files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore raw & processed data (auto-generated)
+data/raw/
+data/processed/
+
+.env
+*.log
+logs/
+
+.DS_Store
+Thumbs.db
