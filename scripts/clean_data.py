@@ -26,14 +26,19 @@ def clean_data():
     #Remove duplicates
     df = df.drop_duplicates()
 
+    #Drop show with null ids
+    df = df[df['show_id'].notna() & (df['show_id'] != '')]
+
     #Handle missing values
     df = df.fillna({
         'director': 'Unknown',
         'cast': 'Unknown',
         'country': 'Unknown',
-        'date_added': 'Unknown',
         'rating': 'Unknown'
     })
+
+    df['date_added'] = pd.to_datetime(df['date_added'], errors='coerce')
+    df['date_added'] = df['date_added'].where(df['date_added'].notna(), None)
 
     #Standardize column names
     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
