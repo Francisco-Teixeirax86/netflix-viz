@@ -1,117 +1,64 @@
 package francisco.personal.netviz.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Data
 @Entity
 @Table(name = "netflix_titles")
 public class NetflixTitle {
 
     @Id
-    private String show_id;
+    @Column(name = "show_id")
+    private String showId;
 
-    @Setter
     @Column(nullable = false)
     private String title;
 
     @Column(nullable = false)
     private String type;
 
+    @Column(name = "director")
     private String director;
 
-    @Column(columnDefinition = "TEXT")
-    private String cast_members;
+    @Column(name="cast_members", columnDefinition = "TEXT")
+    private String castMembers;
 
+    @Column(name = "country")
     private String country;
 
+    @Column(name = "date_added")
     private LocalDate dateAdded;
 
+    @Column(name = "release_year")
     private int releaseYear;
 
+    @Column(name = "rating")
     private String rating;
 
+    @Column(name = "duration")
     private String duration;
 
-    @Column(columnDefinition = "TEXT")
-    private String listed_in;
+    @Column(name = "listed_in")
+    private String listedIn;
 
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    public String getDescription() {
-        return description;
+    public String getShowId() {
+        return showId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setShowId(String showId) {
+        this.showId = showId;
     }
 
-    public String getListed_in() {
-        return listed_in;
+    public String getTitle() {
+        return title;
     }
 
-    public void setListed_in(String listed_in) {
-        this.listed_in = listed_in;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
-
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
-    }
-
-    public LocalDate getDateAdded() {
-        return dateAdded;
-    }
-
-    public void setDateAdded(LocalDate dateAdded) {
-        this.dateAdded = dateAdded;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCast_members() {
-        return cast_members;
-    }
-
-    public void setCast_members(String cast_members) {
-        this.cast_members = cast_members;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getType() {
@@ -122,17 +69,75 @@ public class NetflixTitle {
         this.type = type;
     }
 
-    public String getTitle() {
-        return title;
+    public String getDirector() {
+        return director;
     }
 
-    public String getShowId() {
-        return show_id;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
-    public void setShowId(String show_id) {
-        this.show_id = show_id;
+    public String getCastMembers() {
+        return castMembers;
     }
 
+    public void setCastMembers(String castMembers) {
+        this.castMembers = castMembers;
+    }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public LocalDate getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getListedIn() {
+        return listedIn;
+    }
+
+    public void setListedIn(String listedIn) {
+        this.listedIn = listedIn;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
